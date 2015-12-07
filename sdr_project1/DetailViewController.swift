@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var detailDescriptionImageView: UIImageView!
 
 
     var detailItem: AnyObject? {
@@ -22,9 +22,10 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
+        
         if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+            if let imageView = self.detailDescriptionImageView {
+                imageView.image = UIImage(named: detail as! String)
             }
         }
     }
