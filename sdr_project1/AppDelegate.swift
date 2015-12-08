@@ -46,8 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     // MARK: - Split view
-
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+        //guard 는 if성격을 가진다. 이 조건이 아니면 튕겨 나가다 else 안에는 return, break를 사용할 수 있다. 반드시 만족시켜야 하는 조건을 사용할때 이런 방식을 사용한다  그렇게 되면 컴파일 최적화가 된다.
         guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
         guard let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController else { return false }
         if topAsDetailController.detailItem == nil {

@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionImageView: UIImageView!
 
-
+    //프로퍼티가 변경되면 항상 불린다. 
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
