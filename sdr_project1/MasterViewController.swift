@@ -30,6 +30,7 @@ class MasterViewController: UITableViewController {
         let path = NSBundle.mainBundle().resourcePath!
         let items = try! manager.contentsOfDirectoryAtPath(path)
         
+        //images로 시작하는 것 가져오기
         for item in items {
             if item.hasPrefix("images") {
                 objects.append(item)
